@@ -10,8 +10,7 @@ if __name__ == '__main__':
     opt_p = OptionParser(usage)
     (opts, args) = opt_p.parse_args()
     if len(args) != 1:
-        # mp3 etc later, using pymedia library?
-        print >> sys.stderr, 'You must specify a WAV file.'
+        print >> sys.stderr, 'You must specify a sound file.'
         sys.exit(-1)
     (filename,) = args
 

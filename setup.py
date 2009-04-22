@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='rifle',
-    version='1.2',
+    version='0.0',
     description='interactively tag sound file segments',
     author='Chris Putnam',
     author_email='chrisputnam@gmail.com',
