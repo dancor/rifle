@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+from optparse import OptionParser
+import sys
+import Tkinter as T
+import tkSnack as S
+
+if __name__ == '__main__':
+    usage = ''
+    opt_p = OptionParser(usage)
+    (opts, args) = opt_p.parse_args()
+    if len(args) != 1:
+        # mp3 etc later, using pymedia library?
+        print >> sys.stderr, 'You must specify a WAV file.'
+        sys.exit(-1)
+    (filename,) = args
+
+    root = T.Tk()
+    S.initializeSnack(root)
+    snd = S.Sound()
+    snd.read(filename)
+
+    c = S.SnackCanvas()
+    c.pack()
+    c.create_waveform(0, 0, sound=snd)
+
+    w = T.Label(root, text='Hello')
+    w.pack()
+
+    root.mainloop()
